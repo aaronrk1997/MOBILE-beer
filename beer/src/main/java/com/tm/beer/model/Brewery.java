@@ -64,4 +64,8 @@ public class Brewery {
         this.Logo = logo;
     }
     
+
+    //---------------Use cases-----------------
+
+    
 }
