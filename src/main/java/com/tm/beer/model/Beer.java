@@ -14,7 +14,7 @@ public class Beer {
     @Column(name = "beerId")
     private Long beerId;
 
-    @Column(name = "name", unique = true)
+    @Column(unique = true)
     private String name;
 
     @Column(name = "description")
