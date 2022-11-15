@@ -113,7 +113,4 @@ public class Beer {
     public void setType(BeerType type) {
         this.type = type;
     }
-
-
-    
 }
