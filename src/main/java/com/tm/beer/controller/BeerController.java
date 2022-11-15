@@ -21,13 +21,13 @@ public class BeerController {
     private BreweryRepository breweryRepository;
 
     @GetMapping("/beers/{name}")
-    public  Beer getBeerByName(@PathVariable String name) {
-        return beerRepository.findBeerByName(name);
+    public  Beer getBeerByName(@PathVariable String beerName) {
+        return beerRepository.findBeerByBeerName(beerName);
     }
 
     @GetMapping("/beers/search/{name}")
-    public List<Beer> getBeersByNameContaining(@PathVariable String name) {
-        return beerRepository.findBeerByNameContaining(name);
+    public List<Beer> getBeersByNameContaining(@PathVariable String beerName) {
+        return beerRepository.findBeerByBeerNameContaining(beerName);
     }
 
     @GetMapping("/beers")
@@ -41,8 +41,8 @@ public class BeerController {
     }
 
     @PutMapping("/beers/{name}")
-    public Beer updateBeer(@PathVariable String name, @RequestBody Beer beer) {
-        Beer beerToUpdate = beerRepository.findBeerByName(name);
+    public Beer updateBeer(@PathVariable String beerName, @RequestBody Beer beer) {
+        Beer beerToUpdate = beerRepository.findBeerByBeerName(beerName);
         beerToUpdate.setName(beer.getName());
         beerToUpdate.setDescription(beer.getDescription());
         beerToUpdate.setPicture(beer.getPicture());
@@ -54,8 +54,8 @@ public class BeerController {
     }
 
     @DeleteMapping("/beers/{name}")
-    public void deleteBeer(@PathVariable String name) {
-        beerRepository.delete(beerRepository.findBeerByName(name));
+    public void deleteBeer(@PathVariable String beerName) {
+        beerRepository.delete(beerRepository.findBeerByBeerName(beerName));
     }
 
     @GetMapping("/breweries/{name}")

@@ -15,7 +15,7 @@ public class Beer {
     private Long beerId;
 
     @Column(unique = true)
-    private String name;
+    private String beerName;
 
     @Column(name = "description")
     private String description;
@@ -40,8 +40,8 @@ public class Beer {
         //Empty Constructor for jpa
     }
 
-    public Beer(String name, String description, String picture, String barcode, float alcoholpercentage, Brewery brewery, String type) {
-        setName(name);
+    public Beer(String beerName, String description, String picture, String barcode, float alcoholpercentage, Brewery brewery, String type) {
+        setName(beerName);
         setDescription(description);
         setPicture(picture);
         setBarcode(barcode);
@@ -59,11 +59,11 @@ public class Beer {
     }
 
     public String getName() {
-        return name;
+        return beerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String beerName) {
+        this.beerName = beerName;
     }
 
     public String getDescription() {
