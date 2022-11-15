@@ -41,27 +41,27 @@ public class Brewery {
     }
 
     public String getName() {
-        return this.Name;
+        return this.name;
     }
 
     public void setName(String name) {
-        this.Name = name;
+        this.name = name;
     }
 
     public String getDescription() {
-        return this.Description;
+        return this.description;
     }
 
     public void setDescription(String description) {
-        this.Description = description;
+        this.description = description;
     }
 
     public String getLogo() {
-        return this.Logo;
+        return this.logo;
     }
 
     public void setLogo(String logo) {
-        this.Logo = logo;
+        this.logo = logo;
     }
 
     public List<Beer> getBeers() {
