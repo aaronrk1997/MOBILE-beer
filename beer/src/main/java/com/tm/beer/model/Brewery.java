@@ -1,9 +1,11 @@
 package com.tm.beer.model;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "brewery", indexes = @Index(columnList = "breweryidId"))
+@Table(name = "brewery")
 public class Brewery {
 
     //---------------Attributes-----------------
@@ -21,17 +23,19 @@ public class Brewery {
     @Column(name = "Logo")
     private String Logo;
 
-    //TODO ADD RELATION TO BEER HERE
+    @OneToMany(mappedBy = "brewery", cascade = CascadeType.ALL)
+    private List<Beer> beers;
 
     //---------------Constructors-----------------
     public Brewery() {
         //Empty Constructor for jpa
     }
 
-    public Brewery(String name, String description, String logo) {
-        Name = name;
-        Description = description;
-        Logo = logo;
+    public Brewery(String name, String description, String logo, List<Beer> beers) {
+        setName(name);
+        setDescription(description);
+        setLogo(logo);
+        setBeers(beers);
     }
 
     //---------------Getters and Setters-----------------
@@ -44,7 +48,7 @@ public class Brewery {
         return this.Name;
     }
 
-    private void setName(String name) {
+    public void setName(String name) {
         this.Name = name;
     }
 
@@ -52,7 +56,7 @@ public class Brewery {
         return this.Description;
     }
 
-    private void setDescription(String description) {
+    public void setDescription(String description) {
         this.Description = description;
     }
 
@@ -60,12 +64,20 @@ public class Brewery {
         return this.Logo;
     }
 
-    private void setLogo(String logo) {
+    public void setLogo(String logo) {
         this.Logo = logo;
+    }
+
+    public List<Beer> getBeers() {
+        return this.beers;
+    }
+
+    public void setBeers(List<Beer> beers) {
+        this.beers = beers;
     }
     
 
     //---------------Use cases-----------------
 
-    
+
 }
