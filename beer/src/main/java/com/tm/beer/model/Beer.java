@@ -33,14 +33,14 @@ public class Beer {
     @JoinColumn(name = "breweryId")
     private Brewery brewery;
 
-    private BeerType type;
+    private String type;
 
     //---------------Constructors-----------------
     public Beer() {
         //Empty Constructor for jpa
     }
 
-    public Beer(String name, String description, String picture, String barcode, float alcoholpercentage, Brewery brewery, BeerType type) {
+    public Beer(String name, String description, String picture, String barcode, float alcoholpercentage, Brewery brewery, String type) {
         setName(name);
         setDescription(description);
         setPicture(picture);
@@ -106,11 +106,11 @@ public class Beer {
         this.brewery = brewery;
     }
 
-    public BeerType getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(BeerType type) {
+    public void setType(String type) {
         this.type = type;
     }
 }
