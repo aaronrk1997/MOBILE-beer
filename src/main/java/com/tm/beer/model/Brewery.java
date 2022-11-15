@@ -11,17 +11,13 @@ public class Brewery {
     //---------------Attributes-----------------
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "breweryId")
     private Long breweryId;
 
-    @Column(name = "Name")
-    private String Name;
+    private String name;
 
-    @Column(name = "Description")
-    private String Description;
+    private String description;
 
-    @Column(name = "Logo")
-    private String Logo;
+    private String logo;
 
     @OneToMany(mappedBy = "brewery", cascade = CascadeType.ALL)
     private List<Beer> beers;
