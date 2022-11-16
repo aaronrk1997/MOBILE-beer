@@ -17,7 +17,7 @@ public class Beer {
     @Column(unique = true)
     private String beerName;
 
-    @Column(name = "description")
+    @Column(name = "description", length = 1000)
     private String description;
 
     @Column(name = "picture")
