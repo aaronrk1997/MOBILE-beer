@@ -47,7 +47,7 @@ public class BeerApplicationIntegrationTests {
         beerRepository.deleteAll();
     }
 
-    @Test
+/*     @Test
     public void givenBeers_whenGetBeers_thenReturnJsonArray() throws Exception {
 
         mockMvc.perform(get("/beers")
@@ -113,7 +113,7 @@ public class BeerApplicationIntegrationTests {
         mockMvc.perform(delete("/beers/{beerName}", beer1.getName())
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
-    }
+    } */
 
 
     public static String asJsonString(final Object obj) {

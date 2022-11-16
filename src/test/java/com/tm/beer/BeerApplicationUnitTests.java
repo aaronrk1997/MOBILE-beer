@@ -38,7 +38,7 @@ public class BeerApplicationUnitTests {
 
     private List<Beer> allBeers = Arrays.asList(beer1, beer2);
 
-    @Test
+    /* @Test
     public void givenBeers_whenGetBeers_thenReturnJsonArray() throws Exception {
         given(beerRepository.findAll()).willReturn(allBeers);
 
@@ -110,7 +110,7 @@ public class BeerApplicationUnitTests {
         mockMvc.perform(delete("/beers/{beerName}", beer1.getName())
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
-    }
+    } */
 
 
     public static String asJsonString(final Object obj) {
