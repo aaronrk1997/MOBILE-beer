@@ -25,7 +25,7 @@ public class BeerController {
         return beerRepository.findBeerByBeerName(beerName);
     }
 
-    @GetMapping("/beers/{beerId}")
+    @GetMapping("/beers/id/{beerId}")
     public  Beer getBeerByBeerId(@PathVariable String beerId) {
         long id = Long.parseLong(beerId);
         return beerRepository.findBeerByBeerId(id);
