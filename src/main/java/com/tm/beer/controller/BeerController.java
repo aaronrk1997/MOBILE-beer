@@ -20,13 +20,13 @@ public class BeerController {
     @Autowired
     private BreweryRepository breweryRepository;
 
-    @GetMapping("/beers/{name}")
-    public  Beer getBeerByName(@PathVariable String beerName) {
+    @GetMapping("/beers/{beerName}")
+    public  Beer getBeerByBeerName(@PathVariable String beerName) {
         return beerRepository.findBeerByBeerName(beerName);
     }
 
-    @GetMapping("/beers/search/{name}")
-    public List<Beer> getBeersByNameContaining(@PathVariable String beerName) {
+    @GetMapping("/beers/search/{beerName}")
+    public List<Beer> getBeersByBeerNameContaining(@PathVariable String beerName) {
         return beerRepository.findBeerByBeerNameContaining(beerName);
     }
 
@@ -40,7 +40,7 @@ public class BeerController {
         return beerRepository.save(beer);
     }
 
-    @PutMapping("/beers/{name}")
+    @PutMapping("/beers/{beerName}")
     public Beer updateBeer(@PathVariable String beerName, @RequestBody Beer beer) {
         Beer beerToUpdate = beerRepository.findBeerByBeerName(beerName);
         beerToUpdate.setName(beer.getName());
@@ -53,7 +53,7 @@ public class BeerController {
         return beerRepository.save(beerToUpdate);
     }
 
-    @DeleteMapping("/beers/{name}")
+    @DeleteMapping("/beers/{beerName}")
     public void deleteBeer(@PathVariable String beerName) {
         beerRepository.delete(beerRepository.findBeerByBeerName(beerName));
     }
