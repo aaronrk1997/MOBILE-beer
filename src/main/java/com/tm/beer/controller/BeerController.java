@@ -25,6 +25,11 @@ public class BeerController {
         return beerRepository.findBeerByBeerName(beerName);
     }
 
+    @GetMapping("/beers/{beerId}")
+    public  Beer getBeerByBeerId(@PathVariable String beerId) {
+        return beerRepository.findBeerByBeerId(parseLong(beerId));
+    }
+
     @GetMapping("/beers/search/{beerName}")
     public List<Beer> getBeersByBeerNameContaining(@PathVariable String beerName) {
         return beerRepository.findBeerByBeerNameContaining(beerName);

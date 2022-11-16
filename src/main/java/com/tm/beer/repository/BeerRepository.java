@@ -11,6 +11,7 @@ import com.tm.beer.utils.enums.BeerType;
 @Repository
 public interface BeerRepository extends JpaRepository<Beer, Long> {
     Beer findBeerByBeerName(String beerName);
+    Beer findBeerByBeerId(Long beerId);
     List<Beer> findBeerByType(BeerType type);
     List<Beer> findBeerByBeerNameContaining(String beerName);
 
